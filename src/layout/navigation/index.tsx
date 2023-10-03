@@ -7,8 +7,7 @@ import Box from "@mui/material/Box";
 import Drawer from "./Drawer";
 import VerticalNavItems from "./VerticalNavItems";
 import VerticalNavHeader from "./VerticalNavHeader";
-
-import { VerticalNavItemsType } from "@/lib/types/layout.types";
+import { VerticalNavItemsType } from "@/types/layout.types";
 
 interface Props {
   navWidth: number;
