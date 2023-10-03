@@ -170,7 +170,7 @@ export default function AddCollectionModal({ open, setOpen }: Props) {
                     <Grid xs={6} pl={0}>
                       <DataTimePicker
                         label="From"
-                        value={fromDate && dayjs(fromDate)}
+                        value={fromDate && dayjs.unix(fromDate)}
                         //@ts-ignore
                         onChange={(newValue: Dayjs) =>
                           setFromDate(newValue.unix())
@@ -180,7 +180,7 @@ export default function AddCollectionModal({ open, setOpen }: Props) {
                     <Grid xs={6} pl={0}>
                       <DataTimePicker
                         label="To"
-                        value={toDate && dayjs(toDate)}
+                        value={toDate && dayjs.unix(toDate)}
                         //@ts-ignore
                         onChange={(newValue: Dayjs) =>
                           setToDate(newValue.unix())
