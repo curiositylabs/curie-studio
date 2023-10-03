@@ -64,7 +64,9 @@ const SectionList = ({ sections }: Props) => {
               <MenuNavLink
                 passHref
                 href={
-                  item.section_id === undefined ? "/" : `${item.section_id}`
+                  item.section_id === undefined
+                    ? "/dashboard/section"
+                    : `/dashboard/section/${item.section_id}`
                 }
                 className={
                   item?.section_id && pathname.includes(item.section_id)
