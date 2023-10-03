@@ -1,0 +1,15 @@
+export const API_ENDPOINTS = {
+  LOGIN: "/authenticate",
+  PROFILE: "/profile",
+  GET_SECTIONS: "/get-sections",
+  CREATE_SECTION: "/create-section",
+  CREATE_TOPIC: "/create-topic",
+  GET_TOPICS: "/get-topics",
+  GET_SUBTOPIC: "/get-sub-topics",
+  GET_SLIDES: "/get-slides",
+  CREATE_SUBTOPIC: "/create-subtopic",
+  UPDATE_SLIDE: "/update-slide",
+  CREATE_SLIDE: "/create-slide",
+  AUTOGENERATE_SLIDE: "/autogen-slide",
+  LOGOUT: "/logout",
+};
