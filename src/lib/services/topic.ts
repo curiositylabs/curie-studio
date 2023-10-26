@@ -24,7 +24,7 @@ export const getTopicsBySection = async (section_id: string) => {
 export const getSubTopicsByTopic = async (topic_id: string) => {
   try {
     return await makeServerRequest(
-      API_ENDPOINTS.GET_SUBTOPIC,
+      API_ENDPOINTS.GET_TOPICS,
       "GET",
       null,
       { topic_id },
