@@ -1,12 +1,12 @@
 import { makeServerRequest } from "../utils/api.util";
 import { API_ENDPOINTS } from "./apiEndpoints";
 
-export const getSectionsRequest = async () => {
+export const getSectionsRequest = async (filters = {}) => {
   try {
     return await makeServerRequest(
       API_ENDPOINTS.GET_SECTIONS,
-      "GET",
-      null,
+      "POST",
+      filters,
       {},
       true,
       "getsections"

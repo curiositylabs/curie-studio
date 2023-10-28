@@ -1,5 +1,5 @@
 "use server";
-import { getSessionToken, getTokenForActions } from "./auth.util";
+import { getTokenForActions } from "./auth.util";
 
 export type HTTP_METHOD =
   | "GET"

@@ -20,7 +20,7 @@ const TopicCollectionList = ({ topics }: Props) => {
   const { sectionId } = params;
 
   const handleClick = (item: any) => {
-    router.push(`${sectionId}/${item.topic_id}`);
+    router.push(`${sectionId}/${item.topic_collection_id}`);
   };
   const handleCreateTopic = () => {
     setAddModalOpen(true);

@@ -41,13 +41,13 @@ const SectionList = ({ sections }: Props) => {
     <SectionListWrapper>
       <AddSectionModal
         headerText="Add Section"
-        type="add"
+        action="add"
         open={addModalOpen}
         setOpen={setAddModalOpen}
       />
       <AddSectionModal
         headerText="Edit Section"
-        type="edit"
+        action="edit"
         open={editModalOpen}
         setOpen={setEditModalOpen}
         {...activeSection}

@@ -7,8 +7,9 @@ interface Props {
 
 async function TopicPage({ params }: Props) {
   const { topicId } = params;
-  const { sub_topics } = await getSubTopicsByTopic(topicId);
-  console.log("TOPICSBYSUBTOPIC", sub_topics);
+  const { response: sub_topics } = await getSubTopicsByTopic(topicId, {
+    grade: "all",
+  });
   return <TopicsList topics={sub_topics} />;
 }
 

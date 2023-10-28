@@ -30,8 +30,8 @@ function TopicsList({ topics }: Props) {
       />
       <AddTopicModal open={addModalOpen} setOpen={setAddModalOpen} />
       <Grid container spacing={2}>
-        {topics.length > 0 ? (
-          topics.map((data) => (
+        {topics?.length > 0 ? (
+          topics?.map((data) => (
             <Grid xs={6} lg={4} key={data.id}>
               <ContentCard {...data} onClick={() => handleClick(data)} />
             </Grid>

@@ -24,29 +24,28 @@ import dayjs, { Dayjs } from "dayjs";
 import { convertFormDataToObject } from "@/lib/utils/common.util";
 import { addSection } from "../../actions";
 import { SectionType } from "@/types/section.types";
-import { error } from "console";
 
 interface Props extends Partial<SectionType> {
   open: boolean;
   setOpen: (open: boolean) => void;
   headerText: string;
-  type?: "edit" | "add";
+  action?: "edit" | "add";
 }
 
 const AddSectionModal = ({
-  type = "add",
+  action = "add",
   open,
   setOpen,
   headerText,
   ...sectionProps
 }: Props) => {
-  const [fromDate, setFromDate] = React.useState<number>();
-  const [toDate, setToDate] = React.useState<number>();
+  const [fromDate, setFromDate] = React.useState<string>();
+  const [toDate, setToDate] = React.useState<string>();
 
   const { name, description, grades, duration_from, duration_to } =
     sectionProps;
 
-  const isEdit = type === "edit";
+  const isEdit = action === "edit";
 
   React.useEffect(() => {
     if (duration_from) {
@@ -154,20 +153,20 @@ const AddSectionModal = ({
                     <Grid xs={6} pl={0}>
                       <DataTimePicker
                         label="From"
-                        value={fromDate && dayjs.unix(fromDate)}
+                        value={fromDate && dayjs.unix(Number(fromDate))}
                         //@ts-ignore
                         onChange={(newValue: Dayjs) =>
-                          setFromDate(newValue.unix())
+                          setFromDate(newValue.unix().toString())
                         }
                       />
                     </Grid>
                     <Grid xs={6} pl={0}>
                       <DataTimePicker
                         label="To"
-                        value={toDate && dayjs.unix(toDate)}
+                        value={toDate && dayjs.unix(Number(toDate))}
                         //@ts-ignore
                         onChange={(newValue: Dayjs) =>
-                          setToDate(newValue.unix())
+                          setToDate(newValue.unix().toString())
                         }
                       />
                     </Grid>

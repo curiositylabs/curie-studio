@@ -5,13 +5,13 @@ import {
 import { makeServerRequest } from "../utils/api.util";
 import { API_ENDPOINTS } from "./apiEndpoints";
 
-export const getTopicsBySection = async (section_id: string) => {
+export const getTopicsBySection = async (section_id: string, filters = {}) => {
   try {
     return await makeServerRequest(
       API_ENDPOINTS.GET_TOPICS,
-      "GET",
-      null,
-      { section_id },
+      "POST",
+      { section_id, ...filters },
+      {},
       true,
       `gettopicsbysection${section_id}`
     );
@@ -21,15 +21,18 @@ export const getTopicsBySection = async (section_id: string) => {
   }
 };
 
-export const getSubTopicsByTopic = async (topic_id: string) => {
+export const getSubTopicsByTopic = async (
+  topic_collection_id: string,
+  filters = {}
+) => {
   try {
     return await makeServerRequest(
       API_ENDPOINTS.GET_TOPICS,
-      "GET",
-      null,
-      { topic_id },
+      "POST",
+      { topic_collection_id, ...filters },
+      {},
       true,
-      `getsubtopicsbytopic${topic_id}`
+      `getsubtopicsbytopic${topic_collection_id}`
     );
   } catch (error) {
     console.log("GET TOPICS BY SECTION FAILED", error);
